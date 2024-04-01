@@ -30,6 +30,14 @@ class ReaderManager extends AbstractManager {
     );
     return rows[0];
   }
+
+  async readByEmailWithPassword(email) {
+    const [rows] = await this.database.query(
+      `SELECT * FROM ${this.table} where email = ?`,
+      [email]
+    );
+    return rows;
+  }
 }
 
 module.exports = ReaderManager;

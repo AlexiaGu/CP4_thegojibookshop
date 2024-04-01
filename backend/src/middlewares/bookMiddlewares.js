@@ -12,7 +12,6 @@ const checkIfAdmin = (req, res, next) => {
 
 const minLength = 2;
 const maxLength = 200;
-const maxDateNumber = 4;
 
 const validateBookInformations = (req, res, next) => {
   const bookSchema = Joi.object({
@@ -41,14 +40,10 @@ const validateBookInformations = (req, res, next) => {
         "any.required": "Le résumé est requis",
         "string.empty": "Le résumé est requis",
       }),
-    parutionYear: Joi.number()
-      .max(maxDateNumber)
-      .required()
-      .messages({
-        "string.min": `L'année de parution doit avoir minimum ${maxDateNumber} caractères`,
-        "any.required": "L'année de parution est requise",
-        "string.empty": "L'année de parution est requise",
-      }),
+    parutionYear: Joi.number().required().messages({
+      "any.required": "L'année de parution est requise",
+      "string.empty": "L'année de parution est requise",
+    }),
   });
   const { error } = bookSchema.validate(req.body);
 
