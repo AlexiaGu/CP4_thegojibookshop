@@ -10,6 +10,7 @@ const router = express.Router();
 const itemControllers = require("./controllers/itemControllers");
 const bookControllers = require("./controllers/bookControllers");
 const readerControllers = require("./controllers/readerControllers");
+const authControllers = require("./controllers/authControllers");
 
 // Import pagesMiddleware
 const bookMiddlewares = require("./middlewares/bookMiddlewares");
@@ -28,8 +29,8 @@ router.post("/items", itemControllers.add);
 
 // Books routes
 
-// Route pour aller chercher la liste des livres de l'utilisateur
-router.get("/books", bookMiddlewares.checkIfAdmin, bookControllers.browse);
+// Route pour aller chercher la liste de tous les livres
+router.get("/books", authMiddlewares.verifyToken, bookControllers.browse);
 
 // pour récuperer un livre spécifique selon son id
 router.get("/books/:id", bookControllers.read);
@@ -55,5 +56,8 @@ router.get("/readers", readerControllers.browse);
 // Route to add a new reader
 router.post("/readers", authMiddlewares.hashPassword, readerControllers.add);
 router.get("/readers/:id", readerControllers.read);
+
+// Route login
+router.post("/login", authControllers.login);
 
 module.exports = router;
