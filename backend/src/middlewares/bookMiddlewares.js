@@ -40,10 +40,10 @@ const validateBookInformations = (req, res, next) => {
         "any.required": "Le résumé est requis",
         "string.empty": "Le résumé est requis",
       }),
-    parutionYear: Joi.number().required().messages({
-      "any.required": "L'année de parution est requise",
-      "string.empty": "L'année de parution est requise",
-    }),
+    // parutionYear: Joi.number().required().messages({
+    //   "any.required": "L'année de parution est requise",
+    //   "string.empty": "L'année de parution est requise",
+    // }),
   });
   const { error } = bookSchema.validate(req.body);
 

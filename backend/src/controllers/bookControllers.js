@@ -25,7 +25,7 @@ const update = async (req, res, next) => {
   const bookInfos = {
     title: req.body.title,
     author: req.body.author,
-    parutionYear: req.body.parutionYear,
+    // parutionYear: req.body.parutionYear,
     summary: req.body.summary,
     id: req.params.id,
   };
@@ -47,7 +47,7 @@ const add = async (req, res, next) => {
   const bookInfos = {
     title: req.body.title,
     author: req.body.author,
-    parutionYear: req.body.parutionYear,
+    // parutionYear: req.body.parutionYear,
     summary: req.body.summary,
   };
   try {

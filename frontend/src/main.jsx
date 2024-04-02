@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         errorElement: <Forbidden />,
         loader: () =>
           axios
-            .get(`${import.meta.env.VITE_BACKEND_URL}/api/books`, {
+            .get("http://localhost:3310/api/books", {
               withCredentials: true,
             })
             .then((response) => response.data)

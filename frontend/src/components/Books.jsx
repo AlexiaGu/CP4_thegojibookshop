@@ -3,6 +3,7 @@ import axios from "axios";
 import PropTypes from "prop-types";
 
 export default function Book({ book, refreshPage }) {
+  // fonction pour supprimer un livre
   const deleteBook = () => {
     axios
       .delete(`${import.meta.env.VITE_BACKEND_URL}/api/books/${book.id}`)
@@ -13,6 +14,7 @@ export default function Book({ book, refreshPage }) {
   return (
     <article>
       <h3>{book.title}</h3>
+      <h4>{book.author}</h4>
       <p>{book.summary}</p>
       <button type="button" onClick={deleteBook}>
         Supprimer le livre de la liste
@@ -25,6 +27,7 @@ Book.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
   }).isRequired,
   refreshPage: PropTypes.func.isRequired,

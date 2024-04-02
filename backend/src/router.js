@@ -57,7 +57,8 @@ router.get("/readers", readerControllers.browse);
 router.post("/readers", authMiddlewares.hashPassword, readerControllers.add);
 router.get("/readers/:id", readerControllers.read);
 
-// Route login
+// Route login et log out
 router.post("/login", authControllers.login);
+router.delete("/logout", authControllers.disconnected);
 
 module.exports = router;
