@@ -9,8 +9,8 @@ class BookManager extends AbstractManager {
 
   async create(book) {
     const [rows] = await this.database.query(
-      `INSERT INTO ${this.table} (title, author, summary, parutionYear) VALUES (?, ?, ?, ?)`,
-      [book.title, book.author, book.summary, book.parutionYear]
+      `INSERT INTO ${this.table} (title, author, summary) VALUES (?, ?, ?)`,
+      [book.title, book.author, book.summary]
     );
     return rows;
   }
@@ -30,8 +30,8 @@ class BookManager extends AbstractManager {
 
   async update(book) {
     const [rows] = await this.database.query(
-      `UPDATE ${this.table} SET title=?, author =?, summary=?, parutionYear=? WHERE id=?`,
-      [book.title, book.author, book.summary, book.parutionYear, book.id]
+      `UPDATE ${this.table} SET title=?, author =?, summary=? WHERE id=?`,
+      [book.title, book.author, book.summary, book.id]
     );
     return rows;
   }

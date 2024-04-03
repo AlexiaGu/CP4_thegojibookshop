@@ -8,12 +8,12 @@ class ReaderManager extends AbstractManager {
     super({ table: "reader" });
   }
 
-  async create(reader) {
-    const [rows] = await this.database.query(
-      `INSERT INTO ${this.table} (email, password, username) VALUES (?, ?, ?)`,
-      [reader.email, reader.password, reader.username]
+  async create(readerInfos) {
+    const [result] = await this.database.query(
+      `INSERT INTO ${this.table} (email, password, username) values (?,?,?)`,
+      [readerInfos.email, readerInfos.password, readerInfos.username]
     );
-    return rows;
+    return result;
   }
 
   // /!\ select * from user est interdit car l'on ne souahite pas voir le mdp même en hashé apparaître

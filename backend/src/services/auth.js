@@ -16,7 +16,7 @@ const hashPassword = async (req, res, next) => {
     req.body.hashedPassword = hashedPassword;
     // pour supprimer le password en clair une fois celui-ci hashé
     delete req.body.password;
-    console.info("HASHED PASSWORD", req.body);
+
     next();
   } catch (error) {
     next(error);
@@ -25,17 +25,54 @@ const hashPassword = async (req, res, next) => {
 
 const verifyToken = async (req, res, next) => {
   try {
-    // do something
-    console.info("ptit cookie", req.cookies.auth);
-
     const token = req.cookies.auth;
-
-    const verified = await jwt.verify(token, process.env.APP_SECRET);
-    console.info(verified);
+    await jwt.verify(token, process.env.APP_SECRET);
     next();
+  } catch (error) {
+    res.sendStatus(401);
+  }
+};
+
+const verifyUserToken = (req, res, next) => {
+  const infos = {
+    idReader: req.body.idReader,
+  };
+  const token = req.cookies.auth;
+
+  try {
+    const decodedToken = jwt.verify(token, process.env.APP_SECRET);
+    if (decodedToken.sub === infos.idReader) {
+      console.info("Ok utilisateur vérifié");
+      next();
+    } else {
+      console.info("erreur user non valide");
+    }
   } catch (error) {
     next(error);
   }
 };
 
-module.exports = { hashPassword, verifyToken };
+const verifyUserTokenWithParams = (req, res, next) => {
+  const infos = {
+    idReader: parseInt(req.query.idReader, 10),
+  };
+
+  const token = req.cookies.auth;
+  console.info("ici verify with params", infos.idReader);
+  try {
+    const decodedToken = jwt.verify(token, process.env.APP_SECRET);
+    if (decodedToken.sub === infos.idReader) {
+      console.info("ok ça passe");
+      next();
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = {
+  hashPassword,
+  verifyToken,
+  verifyUserToken,
+  verifyUserTokenWithParams,
+};
