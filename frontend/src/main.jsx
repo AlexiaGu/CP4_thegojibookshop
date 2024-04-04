@@ -17,7 +17,7 @@ import { UserProvider } from "./services/UserContext";
 
 // import "./styles/app.css";
 import "./styles/navbar.css";
-// import "./styles/articles.css";
+import "./styles/home.css";
 
 const router = createBrowserRouter([
   {
