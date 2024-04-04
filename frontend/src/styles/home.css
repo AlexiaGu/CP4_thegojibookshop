@@ -1,0 +1,170 @@
+/* css pour la page Home et pour le component HomeComponent */
+
+.titresHome {
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.titresHome h1 {
+  color: rgb(102, 82, 12);
+  margin-top: 1em;
+  margin-left: 2em;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.titresHome h2 {
+  color: rgb(146, 103, 17);
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  margin-left: 1em;
+}
+
+.componentHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* position: static; */
+  margin-top: 2em;
+}
+
+.linkBook {
+  display: flex;
+  position: absolute;
+}
+
+.linkCreate {
+  display: flex;
+  position: absolute;
+}
+
+.linkLogout {
+  display: flex;
+  position: absolute;
+}
+
+.linkBook a {
+  display: flex;
+  position: relative;
+  top: 0.7em;
+  left: 2.2em;
+  z-index: 1;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.linkCreate a {
+  display: flex;
+  position: relative;
+  top: 3.2em;
+  left: 1em;
+  z-index: 1;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.linkLogout a {
+  display: flex;
+  position: relative;
+  top: 25em;
+  right: 1em;
+  z-index: 1;
+  font-weight: bolder;
+  color: rgb(143, 23, 23);
+  text-decoration: underline;
+}
+
+.backgroundHome {
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 1068px) {
+  .globalHome {
+    background-color: beige;
+    /* background-image: url("../src/assets/IMG_1270.png"); */
+    display: flex;
+    flex-direction: column;
+    background-size: 3em;
+    /* max-height: fit-content; */
+  }
+
+  .titresHome {
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titresHome h2 {
+    color: rgb(209, 222, 25);
+    margin-top: 1em;
+  }
+  .titresHome h3 {
+    color: rgb(132, 174, 47);
+  }
+
+  .componentHome {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-size: cover;
+    height: 10em;
+    width: 50em;
+    align-items: center;
+  }
+
+  .BookAndCreate {
+    display: flex;
+    flex-direction: column;
+
+    /* margin-top: 10em; */
+    /* align-items: center; */
+    /* background-image: url("../src/assets/Fondpagehome.png"); */
+  }
+
+  .linkBookAndCreate {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+  .linkBookAndCreate a {
+    display: flex;
+    /* gap: 2em; */
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    position: relative;
+    top: 9em;
+    /* left: 300px; */
+    z-index: 1;
+  }
+  .linkLogout a {
+    display: flex;
+    position: relative;
+    top: 40.5em;
+    left: 239px;
+    z-index: 1;
+  }
+  /* .etagereLogout > hr {
+    height: 0.5rem;
+    width: 30em;
+    background-color: rgb(122, 100, 9);
+  }
+  .etagereBookEtCreateBook > hr {
+    height: 0.5rem;
+    width: 30em;
+    background-color: rgb(122, 100, 9);
+  } */
+
+  .backgroundHome {
+    /* height:70em; */
+    /* width: fit-content; */
+    display: flex;
+    align-items: center;
+    /* background-color: antiquewhite; */
+    /* background-size: 4px; */
+  }
+}

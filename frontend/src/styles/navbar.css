@@ -1,10 +1,58 @@
-nav {
-  padding: 2rem;
+.globalNavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  max-height: 6em;
+  background-color: #dcc4ad;
 }
 
-nav > a {
-  padding-right: 2rem;
+.placementLien {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  font-weight: 600;
+  align-items: center;
+}
+
+.logo {
+  height: 10em;
+  margin-top: 4em;
+}
+
+.placementLien > a {
   text-decoration: none;
   color: black;
   text-decoration: underline;
+}
+
+@media screen and (min-width: 1068px) {
+  .globalNavbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2em;
+    align-items: center;
+    max-height: 6em;
+  }
+
+  .placementLien {
+    /* padding: 2rem; */
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    font-size: large;
+  }
+
+  .logo {
+    height: 10em;
+    /* margin-right: 0.5em; */
+    margin-top: 4em;
+  }
+
+  .placementLien > a {
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+  }
 }
