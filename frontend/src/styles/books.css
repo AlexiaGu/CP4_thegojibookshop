@@ -1,0 +1,156 @@
+.pageTitle {
+  display: flex;
+  margin: 1em 2em 1em 3em;
+  text-decoration: underline;
+}
+
+.infosBook {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5em;
+  flex-wrap: wrap;
+  background-color: #e3d4ccf7;
+  border: 1px solid black;
+  padding: 0.8em;
+}
+
+.titleBook {
+  text-decoration: underline;
+  display: flex;
+}
+
+.buttonsUpdateDelete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 2em;
+}
+
+.updateButton {
+  background-color: #f6d7c5f7;
+  border-radius: 2em;
+  padding: 0.5em;
+}
+
+.deleteButton {
+  background-color: #e8bca4f7;
+  border-radius: 2em;
+  padding: 0.5em;
+}
+.updateBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.infosUpdate {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputTitle {
+  padding: 0.2em 0em 0em 1em;
+  width: 20em;
+  display: flex;
+}
+
+.authorBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputAuthor {
+  padding: 0.2em 0em 0em 1em;
+  width: 10em;
+  display: flex;
+}
+
+.summaryBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textArea {
+  padding: 0.2em 0em 0em 1em;
+  width: 30em;
+  height: 15em;
+  display: flex;
+}
+
+@media screen and (min-width: 1068px) {
+  .pageTitle {
+    display: flex;
+    justify-content: center;
+    margin: 1em 1em 1em 1em;
+  }
+  .buttonsUpdateDelete {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .infosBook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0em 6em 1em 6em;
+    flex-wrap: wrap;
+    background-color: #e3d4ccf7;
+    border: 1px solid black;
+    padding: 0.8em;
+  }
+  .updateBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  .infosUpdate {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inputTitle {
+    padding: 0.2em 0em 0em 1em;
+    width: 20em;
+    display: flex;
+  }
+
+  .authorBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inputAuthor {
+    padding: 0.2em 0em 0em 1em;
+    width: 10em;
+    display: flex;
+  }
+
+  .summaryBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .textArea {
+    padding: 0.2em 0em 0em 1em;
+    width: 50em;
+    height: 15em;
+    display: flex;
+  }
+}

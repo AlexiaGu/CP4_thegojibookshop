@@ -36,46 +36,63 @@ export default function Book({ book, refreshPage }) {
     <article>
       {isEditing ? (
         // Afficher le formulaire de modification
-        <div>
-          <label>
-            Titre
-            <input
-              type="text"
-              value={updatedTitle}
-              onChange={(e) => setUpdatedTitle(e.target.value)}
-            />
-          </label>
-          <label>
-            Auteur
-            <input
-              type="text"
-              value={updatedAuthor}
-              onChange={(e) => setUpdatedAuthor(e.target.value)}
-            />
-          </label>
-          <label>
-            Summary
-            <textarea
-              value={updatedSummary}
-              onChange={(e) => setUpdatedSummary(e.target.value)}
-            />
-          </label>
+        <div className="updateBox">
+          <div className="infosUpdate">
+            <label className="titleBox">
+              Title
+              <input
+                className="inputTitle"
+                type="text"
+                value={updatedTitle}
+                onChange={(e) => setUpdatedTitle(e.target.value)}
+              />
+            </label>
+            <label className="authorBox">
+              Author
+              <input
+                className="inputAuthor"
+                type="text"
+                value={updatedAuthor}
+                onChange={(e) => setUpdatedAuthor(e.target.value)}
+              />
+            </label>
+            <label className="summaryBox">
+              Summary
+              <textarea
+                className="textArea"
+                value={updatedSummary}
+                onChange={(e) => setUpdatedSummary(e.target.value)}
+              />
+            </label>
+          </div>
           <button type="button" onClick={handleUpdate}>
             Enregistrer les modifications
           </button>
         </div>
       ) : (
         // Afficher les informations du livre
-        <div>
-          <h3>{book.title}</h3>
-          <h4>{book.author}</h4>
-          <p>{book.summary}</p>
-          <button type="button" onClick={handleDelete}>
-            Supprimer le livre de la liste
-          </button>
-          <button type="button" onClick={() => setIsEditing(true)}>
-            Modifier ce livre
-          </button>
+        <div className="sectionBook">
+          <div className="infosBook">
+            <h3 className="titleBook">{book.title}</h3>
+            <h4 className="authorBook">{book.author}</h4>
+            <p className="summaryBook">{book.summary}</p>
+          </div>
+          <div className="buttonsUpdateDelete">
+            <button
+              className="updateButton"
+              type="button"
+              onClick={() => setIsEditing(true)}
+            >
+              Update
+            </button>
+            <button
+              className="deleteButton"
+              type="button"
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
+          </div>
         </div>
       )}
     </article>

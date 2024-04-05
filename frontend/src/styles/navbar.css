@@ -26,33 +26,17 @@
   text-decoration: underline;
 }
 
-@media screen and (min-width: 1068px) {
+@media screen and (min-width: 740px) {
   .globalNavbar {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 2em;
-    align-items: center;
-    max-height: 6em;
-  }
-
-  .placementLien {
-    /* padding: 2rem; */
-    display: flex;
-    flex-direction: row;
-    gap: 5em;
+    justify-content: space-between;
+    max-height: 5em;
     font-size: large;
   }
 
-  .logo {
-    height: 10em;
-    /* margin-right: 0.5em; */
-    margin-top: 4em;
-  }
-
-  .placementLien > a {
-    text-decoration: none;
-    color: black;
-    text-decoration: underline;
+  .placementLien {
+    gap: 2em;
+    font-weight: bolder;
+    margin-left: 2em;
   }
 }

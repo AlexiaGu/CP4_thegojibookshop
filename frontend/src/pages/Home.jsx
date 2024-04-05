@@ -9,8 +9,8 @@ export default function HomePage() {
         <h1> The Goji Bookshelf </h1>
         <h2>
           {" "}
-          Welcome here, where you can keep your readings and see if someone read
-          something intrerresting ...
+          Welcome here, where you can keep your readings and see if someone
+          reads something intrerresting ...
         </h2>
       </div>
       <Home />

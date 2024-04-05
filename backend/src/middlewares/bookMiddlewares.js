@@ -11,7 +11,6 @@ const checkIfAdmin = (req, res, next) => {
 };
 
 const minLength = 2;
-const maxLength = 200;
 
 const validateBookInformations = (req, res, next) => {
   const bookSchema = Joi.object({
@@ -33,7 +32,6 @@ const validateBookInformations = (req, res, next) => {
       }),
     summary: Joi.string()
       .min(minLength)
-      .max(maxLength)
       .required()
       .messages({
         "string.min": `Le résumé doit avoir minimum ${minLength} caractères`,
